@@ -1,0 +1,23 @@
+# changed files
+INSTALL
+Makefile.in
+aclocal.m4
+build-aux/config.guess
+build-aux/config.sub
+build-aux/depcomp
+build-aux/mdate-sh
+build-aux/texinfo.tex
+config.h.in
+configure
+doc/Makefile.in
+gnu/Makefile.in
+lib/Makefile.in
+rmt/Makefile.in
+scripts/Makefile.in
+src/Makefile.in
+tests/Makefile.in
+
+# new files
+autom4te.cache/
+*~
+po/Makevars.template
