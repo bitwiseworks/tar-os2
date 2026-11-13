@@ -2753,6 +2753,10 @@ tar_print_progname (void)
 int
 main (int argc, char **argv)
 {
+#ifdef __KLIBC__
+  if (!isatty(fileno(stdin))) _fsetmode( stdin, "b");
+  if (!isatty(fileno(stdout))) _fsetmode( stdout, "b");
+#endif
   set_start_time ();
   set_program_name (argv[0]);
 #ifdef ENABLE_ERROR_PRINT_PROGNAME

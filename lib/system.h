@@ -462,7 +462,11 @@ char *getenv ();
 # define mkdir(file, mode) (mkdir) (file)
 # define TTY_NAME "con"
 #else
+# if defined(__KLIBC__)
+# define SET_BINARY_MODE(arc) setmode(arc, O_BINARY)
+# else
 # define SET_BINARY_MODE(arc)
+# endif
 # define TTY_NAME "/dev/tty"
 # include <paxlib.h>
 #endif
