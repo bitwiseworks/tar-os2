@@ -71,8 +71,8 @@ if (exec 3>&2)            ; then :; else exec 2>/dev/null; fi
 # The user is always right.
 if ${PATH_SEPARATOR+false} :; then
   PATH_SEPARATOR=:
-  (PATH='/bin;/bin'; FPATH=$PATH; sh -c :) >/dev/null 2>&1 && {
-    (PATH='/bin:/bin'; FPATH=$PATH; sh -c :) >/dev/null 2>&1 ||
+  (PATH='/bin;/bin;/@unixroot/usr/bin'; FPATH=$PATH; sh -c :) >/dev/null 2>&1 && {
+    (PATH='/bin:/bin:/@unixroot/usr/bin'; FPATH=$PATH; sh -c :) >/dev/null 2>&1 ||
       PATH_SEPARATOR=';'
   }
 fi
@@ -882,7 +882,7 @@ at_fn_validate_ranges ()
   done
 }
 # List of the tested programs.
-at_tested='"tar"'
+at_tested='"tar$EXEEXT"'
 
 
 at_prev=
